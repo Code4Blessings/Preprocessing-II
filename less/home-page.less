@@ -1,3 +1,29 @@
+.fun-bus {
+  display: block;
+  width: 96%;
+  height: auto;
+  margin-left: 30px;
+  margin-top: 0;
+
+  @media @mobile {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.top-content .main-content {
+  margin: 20px 150px;
+  padding: 20px 40px;
+  height: 300px;
+  width: 80%;
+  padding: 20px;
+  border-bottom: 2px dashed @navigation-border;
+
+  @media @mobile {
+    .center-p();
+  }
+}
+
 .home {
 
   .content-section {
@@ -6,11 +32,18 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
+   @media @mobile {
+     display: flex;
+     flex-direction: column;
+   }
     
     .text-content {
       width: 48%;
       padding-right: 1%;
+
+      @media @mobile {
+        .center-p();
+      }
     }
 
     .img-content {
@@ -20,12 +53,24 @@
       img {
         border-radius: 10px;
       }
+
+      @media @mobile {
+        display: block;
+        width: 70%;
+        height: auto;
+        margin-left: 70px;
+      }
     }
   }
 
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
+
+    @media @mobile {
+      display: flex;
+      flex-direction: column-reverse;
+    }
 
     .text-content {
       padding-left: 1%;
@@ -53,9 +98,114 @@
     display: flex;
     justify-content: space-between;
 
+    @media @mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
     .destination {
       width: 30%;
       margin-bottom: 30px;
+
+      .btn {
+        .signUp(block, @button-bg, 200px, 45px, 2rem, 10px, center);
+        margin: 0 10px 20px;
+        cursor: pointer;
+        padding-top: 10px;
+        color: @main-bg;
+
+        @media @mobile {
+          .signUp(block, @button-bg, 200px, 40px, 2rem, 10px, center);
+        }
+      }
+
+      @media @mobile {
+        width: 70%;
+        margin-left: 70px;
+        padding: 40px;
+        height: 300px;
+        margin-right: 20px;
+      }
     }
+  }
+
+  .contact-form {
+    box-sizing: border-box;
+    margin: 20px;
+    
+    color: @font-color;
+    line-height: 1.5;
+    font-size: 20px;
+    padding: 1em;
+  }
+
+  .contact-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+  }
+
+  .contact-request{
+    text-align: center;
+  }
+
+  .wrapper {
+    box-shadow: 0 0 20px rgba(72,94,116,0.4);
+  }
+
+  .wrapper > *{
+    padding: 1em;
+  }
+
+  .company-info {
+    background-color: @button-bg;
+    width: 100%;
+    margin: 0;
+
+    h4 {
+      .center-contact();
+    }
+
+    ul {
+      .center-contact();
+    }
+  }
+
+  .contact {
+    background-color: #fff;
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+
+      label {
+        display: block;
+      }
+
+      button {
+        .form-width();
+      }
+
+      input {
+        .form-width();
+        .boxShadow();
+      }
+
+      textarea {
+        .form-width();
+        .boxShadow();
+      }
+
+      button {
+        background-color: @button-bg;
+        .boxShadow();
+        text-transform: uppercase;
+        font-size: 20px;
+        margin-left: 50%;
+      }
+    }
+
   }
 }// home
